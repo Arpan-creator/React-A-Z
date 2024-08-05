@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="root"></div>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script type="text/babel">
+    
+    const Card=({image,name,country,bucket})=>(
+        <div className="card">
+            <img src="{img}" alt=""/>
+            <div className="card-details">
+                <h2>{name}</h2>
+                <p>{Country}</p>
+                <p>Average Bucket:{bucket}</p>
+            </div>
+        </div>
+    );
+
+    const Home=()=>{
+        const [country,setCountry]=useState([])
+        useEffect(()=>{
+            const fetchCountry=async()=>{
+                try{
+                    const response=await axios.get();
+                    setCountry(response.data);
+                }
+                catch(error){
+                    console.log(error)
+                }
+            };
+            fetchCountry();
+
+        },[]);
+
+        return (
+            <div className="home">
+                {destinations.map(destination=>(
+                    <Card
+                    name={destination.name}
+                    country={destination.country}
+                    bucket="{destination.bucket}"/>
+                ))}
+            </div>
+        )
+    }
+    ReactDOM.render(<Home/>,document.getElementById('root'))
+    </script>
+    
+
+</body>
+</html>
