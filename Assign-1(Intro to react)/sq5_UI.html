@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>JSX and Babel</title>
+</head>
+
+<body>
+    <div id="root"></div>
+    <script src="https://unpkg.com/react@18.2.0/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@18.2.0/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script type="text/babel">
+        // Your JSX code here
+        let productDetails = (
+            <div>
+                <p><b>Between lugs</b> : 20 mm</p>
+                <p><b>Bracelet</b> : leather strap</p>
+                <p><b>Case</b> : Steel</p>
+                <p><b>Case diameter</b> : 42 mm</p>
+                <p><b>Dial color</b> : Black</p>
+                <p><b>Crystal</b> : Domed, scratch-resistent sapphire crystal with anti-reflective ttreatment inside</p>
+                <p><b>Water resistance</b> : 5 bar(50 meters/167 feet)</p>
+            </div>
+        )
+
+       
+        const App = (
+            <>
+                <div className="main">
+
+                    <img src="https://images.unsplash.com/photo-1587925358603-c2eea5305bbc?q=80&w=387&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" />
+                    <div>
+                        <h1>Automatic Watch</h1>
+                        <p>$350.00 USD</p>
+                    </div>
+                    <div>
+                        <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore a quia rerum placeat velit molestias nihil consequatur. Doloribus laborum, cupiditate, ipsam officia tempora suscipit alias officiis tempore adipisci aperiam minus.</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit aliquid eligendi ipsum pariatur veniam quibusdam maxime perferendis recusandae voluptatibus sit, expedita, exercitationem, aspernatur odio necessitatibus. Enim quae saepe dignissimos neque.</p>
+                    </div>
+
+                    <div>
+                        <h2 style={{color:"yellow"}}>PRODUCT DETAILLS</h2>
+                        {productDetails}
+                        
+                    </div>
+
+                    <div style={{height:"15%", width:"100%",margin:"auto",backgroundColor:"black",display:'flex', alignItems:"center",justifyContent:'center'}}>
+                        <h2 style={{color:"white",marginleft:"29px"}}>ADD TO CART</h2>
+                        
+                    </div>
+
+                    
+
+                </div>
+            </>
+        )
+        let root = document.getElementById('root')
+        ReactDOM.render(App, root)
+    </script>
+</body>
+
+</html>
